@@ -1,4 +1,4 @@
-import { Box, Heading, Table } from "react-bulma-components";
+import { Box, Heading } from "react-bulma-components";
 import { FaUsers, FaFileAlt, FaExclamationCircle } from "react-icons/fa";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
@@ -33,28 +33,20 @@ const StatBox = ({ icon, title, value, color }) => (
   </Box>
 );
 
-const DashboardContent = () => {
-  const recentActivities = [
-    { date: "2023-07-01", activity: "New resident registered", status: "Completed" },
-    { date: "2023-07-01", activity: "Complaint filed", status: "Pending" },
-    { date: "2023-06-30", activity: "Certificate issued", status: "Completed" },
-    { date: "2023-06-30", activity: "New announcement posted", status: "Active" },
-  ];
-
-  // Data for the pie chart
+const Dashboard = () => {
   const pieChartData = {
     labels: ["1-12", "13-18", "18-59", "60-99", "100+"],
     datasets: [
       {
         data: [10, 20, 50, 15, 5],
         backgroundColor: [
-          'rgba(255, 159, 64, 0.8)',  // orange
-          'rgba(54, 162, 235, 0.8)',  // blue
-          'rgba(75, 192, 192, 0.8)',  // teal
-          'rgba(153, 102, 255, 0.8)', // purple
-          'rgba(255, 99, 132, 0.8)',  // pink
+          "rgba(255, 159, 64, 0.8)", // orange
+          "rgba(54, 162, 235, 0.8)", // blue
+          "rgba(75, 192, 192, 0.8)", // teal
+          "rgba(153, 102, 255, 0.8)", // purple
+          "rgba(255, 99, 132, 0.8)", // pink
         ],
-        borderColor: 'rgba(255, 255, 255, 0.3)',
+        borderColor: "rgba(255, 255, 255, 0.3)",
         borderWidth: 2,
       },
     ],
@@ -65,24 +57,24 @@ const DashboardContent = () => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'right',
+        position: "right",
         labels: {
-          color: '#fff',
+          color: "#fff",
           font: {
-            size: 14
+            size: 14,
           },
-          padding: 20
-        }
+          padding: 20,
+        },
       },
       tooltip: {
-        backgroundColor: 'rgba(255, 255, 255, 0.9)',
-        titleColor: '#000',
-        bodyColor: '#000',
+        backgroundColor: "rgba(255, 255, 255, 0.9)",
+        titleColor: "#000",
+        bodyColor: "#000",
         padding: 12,
-        borderColor: 'rgba(255, 255, 255, 0.3)',
-        borderWidth: 1
-      }
-    }
+        borderColor: "rgba(255, 255, 255, 0.3)",
+        borderWidth: 1,
+      },
+    },
   };
 
   return (
@@ -158,4 +150,4 @@ const DashboardContent = () => {
   );
 };
 
-export default DashboardContent;
+export default Dashboard;

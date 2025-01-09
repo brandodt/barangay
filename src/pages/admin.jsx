@@ -1,9 +1,9 @@
 import { Hero, Container, Columns } from "react-bulma-components";
+import { Outlet } from "react-router-dom";
 import bg from "../assets/hero.jpg";
-import Sidebar from "../components/Sidebar";
-import DashboardContent from "../components/DashboardContent";
+import Sidebar from "../components/admin/Sidebar";
 
-const AdminDashboard = () => {
+const Admin = () => {
   return (
     <Hero size="fullheight" style={{ position: "relative" }}>
       <Hero.Body
@@ -12,16 +12,15 @@ const AdminDashboard = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: "100vh",
-          padding: "1.5rem",
         }}
       >
-        <Container style={{ padding: '2rem 1rem' }}>
-          <Columns>
-            <Columns.Column size={3}>
+        <Container>
+          <Columns className="is-flex">
+            <Columns.Column size={3} style={{ paddingTop: "1.5rem" }}>
               <Sidebar />
             </Columns.Column>
-            <Columns.Column size={9}>
-              <DashboardContent />
+            <Columns.Column size={9} style={{ paddingTop: "1.5rem" }}>
+              <Outlet />
             </Columns.Column>
           </Columns>
         </Container>
@@ -30,4 +29,4 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+export default Admin;
