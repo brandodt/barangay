@@ -1,0 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+}
+
+/* Add these styles */
+html {
+  scroll-padding-top: 80px; /* Adjust based on your navbar height */
+}
+
+body {
+  padding-top: 3.25rem; /* Match navbar height */
+}
+
+.navbar {
+  min-height: 3.25rem !important;
+}
+
+.navbar-brand {
+  min-height: inherit !important;
+}
+
+.navbar-menu {
+  min-height: inherit !important;
+}
+
+/* Override any Bulma defaults that might affect height */
+.navbar, .navbar-menu, .navbar-brand, .navbar-item {
+  max-height: 3.25rem !important;
+}
+
+.navbar.is-fixed-top {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Style for mobile menu background */
+@media screen and (max-width: 1023px) {
+  .navbar-menu.is-active {
+    background: rgba(0, 0, 0, 0.9) !important;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}
