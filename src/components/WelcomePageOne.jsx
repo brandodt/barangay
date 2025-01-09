@@ -5,12 +5,15 @@ import {
   Heading,
   Button,
 } from "react-bulma-components";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/BarangayLogo.png";
 import bg from "../assets/hero.jpg";
 
 const WelcomePageOne = () => {
-  const scrollToAbout = () => {
-    document.getElementById('about-section').scrollIntoView({ behavior: 'smooth' });
+  const navigate = useNavigate();
+
+  const handleRegister = () => {
+    navigate("/register");
   };
 
   return (
@@ -23,7 +26,7 @@ const WelcomePageOne = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundBlendMode: "overlay",
-            height: "100vh"
+            height: "100vh",
           }}
         >
           <Container
@@ -64,34 +67,18 @@ const WelcomePageOne = () => {
                   <br />
                   brgydulongbayan1980@gmail.com / 09166221911 <br />
                   <br />
-                  <Button rounded color="white" outlined>
+                  <Button
+                    rounded
+                    color="white"
+                    outlined
+                    onClick={handleRegister}
+                  >
                     Create Account
                   </Button>
                 </Heading>
               </Columns.Column>
             </Columns>
           </Container>
-          <div 
-            style={{
-              position: 'absolute',
-              bottom: '30px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              cursor: 'pointer',
-              zIndex: 100
-            }}
-          >
-            <Button 
-              onClick={scrollToAbout}
-              style={{
-                backgroundColor: 'transparent',
-                border: 'none',
-                padding: '10px'
-              }}
-            >
-              <i className="fas fa-chevron-down fa-2x" style={{ color: 'white' }}></i>
-            </Button>
-          </div>
         </Hero.Body>
       </Hero>
     </>

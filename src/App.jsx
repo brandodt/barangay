@@ -13,6 +13,8 @@ import ResidentsInformation from "./components/admin/ResidentsInformation";
 import Appointments from "./components/admin/Appointments";
 import Reports from "./components/admin/Reports";
 import Settings from "./components/admin/Settings";
+import Register from "./components/Register";
+import Login from "./components/Login";
 
 function App() {
   useEffect(() => {
@@ -27,6 +29,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Index />} />
+        <Route path="register" element={<Register />} />
+        <Route path="login" element={<Login />} />
         <Route path="/admin" element={<Admin />}>
           <Route index element={<Announcements />} />
           <Route path="dashboard" element={<Dashboard />} />
@@ -36,10 +40,7 @@ function App() {
             path="residents-information"
             element={<ResidentsInformation />}
           />
-          <Route
-            path="appointments"
-            element={<Appointments />}
-          />
+          <Route path="appointments" element={<Appointments />} />
           <Route path="incident-reports" element={<Reports />} />
           <Route path="settings" element={<Settings />} />
         </Route>

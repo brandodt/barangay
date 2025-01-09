@@ -3,6 +3,7 @@ import NavigationBar from "../components/NavigationBar"
 import WelcomePageOne from '../components/WelcomePageOne'
 import WelcomPageTwo from '../components/WelcomPageTwo'
 import WelcomePageThree from '../components/WelcomePageThree'
+import MissionVision from '../components/MissionVision'
 import HeroFooter from '../components/HeroFooter'
 
 const Index = () => {
@@ -12,6 +13,7 @@ const Index = () => {
       <WelcomePageOne />
       <WelcomPageTwo />
       <WelcomePageThree />
+      <MissionVision />
       <HeroFooter />
     </>
   );

@@ -1,0 +1,13 @@
+/* ...existing code... */
+
+.white-placeholder::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.white-placeholder:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.white-placeholder::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
